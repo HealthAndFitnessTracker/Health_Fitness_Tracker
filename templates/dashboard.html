@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dashboard.css') }}">
+</head>
+<body>
+    <div class="header">
+        <div class="company-name">
+            <p>
+                <span class="company-name1">Nutri</span><span class="company-name2">Fit</span>
+            </p>
+        </div>
+        <div>
+            <img class="dashboard-img1" src="{{ url_for('static', filename='images/dashboard_header.png') }}">
+        </div>
+        <div>
+            <img class="dashboard-img2" src="{{ url_for('static', filename='images/dashboard_header.png') }}">
+        </div>
+        <div>
+            <img class="guest" src="{{ url_for('static', filename='images/guest.png') }}">
+        </div>
+        <div class="signIn-button">
+            <button onclick="window.location.href='/signIn'">Sign In</button>
+        </div>
+    </div>
+    <div class="about">
+        <h1>About Us</h1>
+        <p class="about-para">NutriFit is a comprehensive health monitoring website designed to help individuals track and analyze their health data. With features such as tracking of weight, height, exercise routines, and daily food intake, NutriFit allows users to better understand their health and develop a personalized health plan.
+        </p>
+        <p class="about-para">
+            The website's user-friendly interface makes it easy for users to input and manage their health data. NutriFit's tracking tools allow users to see trends in their weight, monitor their exercise routines, and keep track of their food intake. Additionally, NutriFit provides users with personalized health plans based on their data, giving them specific recommendations to improve their health.
+        </p>
+        <p class="about-para">
+            With NutriFit, users can easily set and achieve health goals, monitor their progress, and make informed decisions about their health. The website provides a comprehensive solution for individuals looking to take control of their health and achieve their wellness goals.
+        </p>
+    </div>
+</body>
+</html>
