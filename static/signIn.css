@@ -1,0 +1,70 @@
+.header{
+    width: 100%;
+    height: 206px;
+    background-color: rgba(4, 242, 28, 0.4666666666666667);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+.dashboard-img1{
+    position: absolute;
+    width: 25%;
+    bottom: 0;
+    left: 0;
+    transform: rotate(180deg);
+    transform-origin: center;
+}
+
+.dashboard-img2{
+    position: absolute;
+    width: 25%;
+    top: 0;
+    right: 0;
+}
+
+.company-name{
+    text-align: center;
+    font-family:"Montserrat Bold", "Montserrat", sans-serif;
+    font-size: 72px;
+}
+
+.company-name1{
+    font-weight: 500;
+}
+
+.company-name2{
+    font-weight: 1000;
+}
+
+.signIn{
+    margin-top: 230px;
+}
+
+form {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+    padding: 30px;
+}
+
+button{
+    background-color: cornflowerblue;
+    width: 150px;
+    height: 30px;
+    border: solid 1px cornflowerblue;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+input{
+    height: 25px;
+}
+
+.newUser{
+    font-size: medium
+}

@@ -3,9 +3,20 @@ app = Flask(__name__)
 
 
 @app.route('/')
-def weight_and_height():
+def dashboard():
     return render_template('dashboard.html')
 
+@app.route('/signIn')
+def signIn():
+    return render_template('signIn.html')
+
+@app.route('/signUp')
+def signUp():
+    return render_template('signUp.html')
+
+@app.route('/signInCheck')
+def signInCheck():
+    return null
 
 @app.route('/calculate', methods=['POST'])
 def calculate():

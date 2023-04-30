@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign In</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='signIn.css') }}">
+</head>
+<body>
+    <div class="header">
+        <div class="company-name">
+            <p>
+                <span class="company-name1">Nutri</span><span class="company-name2">Fit</span>
+            </p>
+        </div>
+        <div>
+            <img class="dashboard-img1" src="{{ url_for('static', filename='images/dashboard_header.png') }}">
+        </div>
+        <div>
+            <img class="dashboard-img2" src="{{ url_for('static', filename='images/dashboard_header.png') }}">
+        </div>
+    </div>
+    <div class="signIn">
+        <form action="{{ url_for('signInCheck') }}" method="post">
+            <table>
+            <tr class="form-group">
+              <td><label for="userName">User Name:</label></td>
+              <td><input type="text" id="userName" name="userName" required></td>
+            </tr>
+            <tr class="form-group">
+              <td><label for="password">Password:</label></td>
+              <td><input type="password" id="password" name="password" required></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><button type="submit">Submit</button></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><label class="newUser">New User? <a href="{{ url_for('signUp') }}">Sign up here</a></label></td>
+            </tr>
+            </table>
+          </form>
+    </div>
+</body>
+</html>
