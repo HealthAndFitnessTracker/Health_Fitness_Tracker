@@ -19,7 +19,7 @@
         </div>
     </div>
     <div class="signIn">
-        <form action="{{ url_for('signInCheck') }}" method="post">
+        <form action="{{ url_for('views.signInCheck') }}" method="post">
             <table>
             <tr class="form-group">
               <td><label for="userName">User Name:</label></td>
@@ -35,7 +35,7 @@
             </tr>
             <tr>
                 <td></td>
-                <td><label class="newUser">New User? <a href="{{ url_for('signUp') }}">Sign up here</a></label></td>
+                <td><label class="newUser">New User? <a href="{{ url_for('views.signUp') }}">Sign up here</a></label></td>
             </tr>
             </table>
           </form>
