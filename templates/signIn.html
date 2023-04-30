@@ -19,19 +19,20 @@
         </div>
     </div>
     <div class="signIn">
-        <form action="{{ url_for('views.signInCheck') }}" method="post">
+        <form method="POST">
+          {{ form.hidden_tag() }}
             <table>
             <tr class="form-group">
-              <td><label for="userName">User Name:</label></td>
-              <td><input type="text" id="userName" name="userName" required></td>
+              <td>{{ form.email.label }}</td>
+              <td>{{ form.email(class='form-control') }}</td>
             </tr>
             <tr class="form-group">
-              <td><label for="password">Password:</label></td>
-              <td><input type="password" id="password" name="password" required></td>
+              <td>{{ form.password.label }}</td>
+              <td>{{ form.password(class='form-control') }}</td>
             </tr>
             <tr>
               <td></td>
-              <td><button type="submit">Submit</button></td>
+              <td>{{ form.submit(class="btn") }}</td>
             </tr>
             <tr>
                 <td></td>
