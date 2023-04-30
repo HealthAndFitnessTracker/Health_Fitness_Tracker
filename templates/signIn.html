@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign In</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='header.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='signIn.css') }}">
+</head>
+<body>
+    <div class="header">
+        <div class="company-name">
+            <p>
+                <span class="company-name1">Nutri</span><span class="company-name2">Fit</span>
+            </p>
+        </div>
+        <div>
+            <img class="dashboard-img1" src="{{ url_for('static', filename='images/dashboard_header.png') }}">
+        </div>
+        <div>
+            <img class="dashboard-img2" src="{{ url_for('static', filename='images/dashboard_header.png') }}">
+        </div>
+    </div>
+    <div class="signIn">
+        <form method="POST">
+          {{ form.hidden_tag() }}
+            <table>
+            <tr class="form-group">
+              <td>{{ form.email.label }}</td>
+              <td>{{ form.email(class='form-control') }}</td>
+            </tr>
+            <tr class="form-group">
+              <td>{{ form.password.label }}</td>
+              <td>{{ form.password(class='form-control') }}</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>{{ form.submit(class="btn") }}</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><label class="newUser">New User? <a href="{{ url_for('views.signUp') }}">Sign up here</a></label></td>
+            </tr>
+            </table>
+          </form>
+    </div>
+</body>
+</html>
