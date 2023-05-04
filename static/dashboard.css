@@ -1,0 +1,26 @@
+button{
+    position: absolute;
+    right: 10%;
+    top: 48%;
+    width: 12%;
+    height: 20%;
+    background-color:  rgba(255, 255, 255, 0.634);
+    color: #000000;
+    border: solid 1px rgb(133, 126, 126);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.about {
+    margin-top: 230px;
+}
+
+h1{
+    text-align: center;
+}
+
+.about-para{
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 20px;
+}

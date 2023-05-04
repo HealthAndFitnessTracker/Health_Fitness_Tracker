@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>profile</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='profile.css') }}">
+</head>
+<body>
+    <div class="header">
+        <div class="company-name">
+            <p>
+                <span class="company-name1">Nutri</span><span class="company-name2">Fit</span>
+            </p>
+        </div>
+        <div>
+            <img class="dashboard-img1" src="{{ url_for('static', filename='images/dashboard_header.png') }}">
+        </div>
+        <div>
+            <img class="dashboard-img2" src="{{ url_for('static', filename='images/dashboard_header.png') }}">
+        </div>
+        <div>
+            <img class="guest" src="{{ url_for('static', filename='images/guest.png') }}">
+        </div>
+        <div class="signIn-button">
+            <button onclick="window.location.href='/signIn'">Pages</button>
+        </div>
+    </div>
+    <div class="about">
+        <h1>Your Profile</h1>
+        <p class="about-para">
+            Hello {{Name}}, this is your profile.
+        </p>
+        <p class="about-para">
+            These are your current goals:
+        </p>
+        <p class="about-para">
+            These are your measurements
+        </p>
+    </div>
+</body>
+</html>
