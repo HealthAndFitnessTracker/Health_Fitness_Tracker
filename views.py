@@ -28,3 +28,7 @@ def signUp():
         return 'Hello'
 
     return render_template('signUp.html', form=sign_up_form)
+
+@views.route('/calendar') 
+def calendar(): 
+    return render_template('calendar.html') 
