@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>directory</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='header.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='directory.css') }}">
+</head>
+<body>
+    <div class="header">
+        <div class="company-name">
+            <p>
+                <span class="company-name1">Nutri</span><span class="company-name2">Fit</span>
+            </p>
+        </div>
+        <div>
+            <img class="dashboard-img1" src="{{ url_for('static', filename='images/dashboard_header.png') }}">
+        </div>
+        <div>
+            <img class="dashboard-img2" src="{{ url_for('static', filename='images/dashboard_header.png') }}">
+        </div>
+        <div>
+            <img class="guest" src="{{ url_for('static', filename='images/guest.png') }}">
+        </div>
+        <div class ="button-group">
+            <button class="button" type="button", onclick="window.location.href='/profile'">profile</button>
+            <button class="button" type="button", onclick="window.location.href='/calendar'">calendar</button>
+            <button class="button" type="button">test</button>
+            <button class="button" type="button">test</button>
+            <button class="button" type="button">test</button>
+            <button class="button" type="button">test</button>
+        </div>
+    </div>
+</body>
+</html>

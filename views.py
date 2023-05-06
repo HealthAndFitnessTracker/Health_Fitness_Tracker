@@ -7,13 +7,16 @@ from Measurements import Measurements
 
 views = Blueprint(__name__, "views")
 
+email = ""
+
 @views.route('/')
 def dashboard():
     return render_template('dashboard.html')
 
-# changed part of the sign in method to get the information stored on the database. it will still function like it previously did.
+# changed part of the sign in method to get the information stored on the database. it will still function like it previously did. if you want to do the old version, comment out from the next comment to the user, also comment out the return render template name=user line.
 @views.route('/signIn', methods=['GET', 'POST'])
 def signIn():
+    global email
     # this part is to get the data from sign in requests and to use them in the profile and user. Done by Noah
     if request.method == 'POST':
         email = request.form.get('email')
@@ -31,12 +34,14 @@ def signIn():
 # changed this function to send a new accounts info into the database. it will still act like it previously did. done by Noah
 @views.route('/signUp', methods=['GET', 'POST'])
 def signUp():
+    global email
     # this part is to get the data from sign in requests and to use them in the profile and user.
     if request.method == 'POST':
         email = request.form.get('email')
         name = request.form.get('name')
         password = request.form.get('password')
         measurements = Measurements(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        # goals = Goals(0,0,0,0,0)
 
         data = request.form
         print(data)
@@ -55,5 +60,14 @@ def signUp():
 
 @views.route('/profile', methods=['GET', 'POST'])
 def profile():
-    args = request.args
-    username = args.get('name')
+    global email
+    user = User.query.filter_by(email=email).first()
+    return render_template('profile.html', Name=user.name, Email=user.email, Password=user.password, Measurements=user.measurements)
+
+@views.route('/directory', methods=['GET'])
+def directory():
+    return render_template('directory.html')
+
+@views.route('/calendar') 
+def calendar(): 
+    return render_template('calendar.html') 
