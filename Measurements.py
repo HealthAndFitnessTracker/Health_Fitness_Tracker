@@ -69,12 +69,3 @@ class Measurements():
         if value == 7:
             self.right_thigh = 0
             self.right_thigh_height = 0
-
-
-test = Measurements(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15)
-test.AddMeasurement(0)
-test.DeleteMeasurement(2)
-print(test.weight)
-print(test.left_arm_height)
-print(test)
-

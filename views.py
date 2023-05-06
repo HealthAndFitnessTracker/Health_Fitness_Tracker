@@ -3,6 +3,7 @@ from forms.sign_in_form import SignInForm
 from forms.sign_up_form import SignUpForm
 from src.User import User
 from appbase import db
+from Measurements import Measurements
 
 views = Blueprint(__name__, "views")
 
@@ -25,7 +26,7 @@ def signIn():
         email = sign_in_form.email.data
         password = sign_in_form.password.data
 
-        return render_template('profile.html', Name=user.name, email=user.email)
+        return render_template('profile.html', Name=user.name, Measurements=user.measurements)
     return render_template('signIn.html', form=sign_in_form)
 # changed this function to send a new accounts info into the database. it will still act like it previously did. done by Noah
 @views.route('/signUp', methods=['GET', 'POST'])
@@ -35,10 +36,11 @@ def signUp():
         email = request.form.get('email')
         name = request.form.get('name')
         password = request.form.get('password')
+        measurements = Measurements(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
 
         data = request.form
         print(data)
-        new_user = User(name=name, email=email, password=password)
+        new_user = User(name=name, email=email, password=password, measurements=measurements)
         db.session.add(new_user)
         db.session.commit()
 
