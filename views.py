@@ -1,6 +1,7 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, session
 from forms.sign_in_form import SignInForm
 from forms.sign_up_form import SignUpForm
+from user import User
 
 views = Blueprint(__name__, "views")
 
@@ -14,6 +15,12 @@ def signIn():
     if sign_in_form.validate_on_submit():
         email = sign_in_form.email.data
         password = sign_in_form.password.data
+        try:
+            user = User.login(email, password)
+            session['username'] = user.username
+        except ValueError as e:
+            error = str(e)
+            return render_template('signIn.html', form=sign_in_form, error=error)
 
         return 'Hello'
     return render_template('signIn.html', form=sign_in_form)
@@ -25,6 +32,13 @@ def signUp():
         name = sign_up_form.name.data
         email = sign_up_form.email.data
         password = sign_up_form.password.data
+        try:
+            user = User(email, name, password)
+            user.register()
+            session['username'] = name
+        except ValueError as e:
+            error = str(e)
+            return render_template('signUp.html', form=sign_up_form, error=error)
         return 'Hello'
 
     return render_template('signUp.html', form=sign_up_form)

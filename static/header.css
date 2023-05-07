@@ -44,3 +44,21 @@
 .company-name2{
     font-weight: 1000;
 }
+
+.error{
+    font-size: 10px;
+    color: red;
+}
+
+.home-button{
+    position: absolute;
+    left: 15%;
+    top: 48%;
+    width: 12%;
+    height: 20%;
+    background-color:  rgba(255, 255, 255, 0.634);
+    color: #000000;
+    border: solid 1px rgb(133, 126, 126);
+    border-radius: 5px;
+    cursor: pointer;
+}
