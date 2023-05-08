@@ -18,12 +18,24 @@
         <div>
             <img class="dashboard-img2" src="{{ url_for('static', filename='images/dashboard_header.png') }}">
         </div>
-        <div>
-            <img class="guest" src="{{ url_for('static', filename='images/guest.png') }}">
-        </div>
-        <div class="signIn-button">
-            <button onclick="window.location.href='/signIn'">Sign In</button>
-        </div>
+        {% if username %}
+            <div class="username">{{ username }}</div>
+            <div class="signIn-button">
+                <button onclick="window.location.href='/logout'">Log Out</button>
+            </div>
+        {% else %}
+            <div>
+                <img class="guest" src="{{ url_for('static', filename='images/guest.png') }}">
+            </div>
+            <div class="signIn-button">
+                <button onclick="window.location.href='/signIn'">Sign In</button>
+            </div>
+        {% endif %}
+        {% if username %}
+            <div>
+                <button class="home-button" onclick="window.location.href='/myBoard'">My Board</button>
+            </div>
+        {% endif %}
     </div>
     <div class="about">
         <h1>About Us</h1>

@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, session
+from flask import Blueprint, render_template, request, session, redirect,  url_for
 from forms.sign_in_form import SignInForm
 from forms.sign_up_form import SignUpForm
 from user import User
@@ -7,7 +7,8 @@ views = Blueprint(__name__, "views")
 
 @views.route('/')
 def dashboard():
-    return render_template('dashboard.html')
+    username = session.get('username')
+    return render_template('dashboard.html', username=username)
 
 @views.route('/signIn', methods=['GET', 'POST'])
 def signIn():
@@ -18,6 +19,7 @@ def signIn():
         try:
             user = User.login(email, password)
             session['username'] = user.username
+            session['email'] = user.email
         except ValueError as e:
             error = str(e)
             return render_template('signIn.html', form=sign_in_form, error=error)
@@ -42,3 +44,8 @@ def signUp():
         return 'Hello'
 
     return render_template('signUp.html', form=sign_up_form)
+
+@views.route('/logout')
+def logout():
+    session.pop('username', None)
+    return redirect(url_for('views.dashboard'))
