@@ -31,6 +31,13 @@
     top: 45%;
 }
 
+.username{
+    width: 5%;
+    position: absolute;
+    right: 23%;
+    top: 45%; 
+}
+
 .company-name{
     text-align: center;
     font-family:"Montserrat Bold", "Montserrat", sans-serif;
