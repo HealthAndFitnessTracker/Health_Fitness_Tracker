@@ -1,0 +1,86 @@
+.logout-button{
+    position: absolute;
+    right: 10%;
+    top: 48%;
+    width: 12%;
+    height: 20%;
+    background-color:  rgba(255, 255, 255, 0.634);
+    color: #000000;
+    border: solid 1px rgb(133, 126, 126);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.profile{
+    width: 95%;
+    height: 95%;
+    background-color:  rgba(84, 82, 203, 0.634);
+    color: #000000;
+    border: solid 1px rgb(133, 126, 126);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.calender{
+    width: 95%;
+    height: 95%;
+    background-color:  rgba(82, 189, 203, 0.634);
+    color: #000000;
+    border: solid 1px rgb(133, 126, 126);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.nutrition{
+    width: 95%;
+    height: 95%;
+    background-color:  rgba(82, 203, 114, 0.634);
+    color: #000000;
+    border: solid 1px rgb(133, 126, 126);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.activity{
+    width: 95%;
+    height: 95%;
+    background-color:  rgba(203, 82, 161, 0.634);
+    color: #000000;
+    border: solid 1px rgb(133, 126, 126);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.measurements{
+    width: 95%;
+    height: 95%;
+    background-color:  rgba(203, 183, 82, 0.634);
+    color: #000000;
+    border: solid 1px rgb(133, 126, 126);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.goals{
+    width: 95%;
+    height: 95%;
+    background-color:  rgba(203, 82, 82, 0.634);
+    color: #000000;
+    border: solid 1px rgb(133, 126, 126);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.myBoard{
+    margin-top: 230px;
+}
+
+table{
+    width: 100%;
+}
+
+table td{
+    height: 200px;
+    width: 50%;
+}
+

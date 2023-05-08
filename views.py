@@ -24,7 +24,7 @@ def signIn():
             error = str(e)
             return render_template('signIn.html', form=sign_in_form, error=error)
 
-        return 'Hello'
+        return redirect(url_for('views.myBoard'))
     return render_template('signIn.html', form=sign_in_form)
 
 @views.route('/signUp', methods=['GET', 'POST'])
@@ -41,11 +41,20 @@ def signUp():
         except ValueError as e:
             error = str(e)
             return render_template('signUp.html', form=sign_up_form, error=error)
-        return 'Hello'
-
+        return redirect(url_for('views.myBoard'))
     return render_template('signUp.html', form=sign_up_form)
 
 @views.route('/logout')
 def logout():
     session.pop('username', None)
+    session.pop('email', None)
     return redirect(url_for('views.dashboard'))
+
+@views.route('/myBoard', methods=['GET', 'POST'])
+def myBoard():
+    username = session.get('username')
+    if username:
+        return render_template('myBoard.html', username=username)
+    else:
+        return redirect(url_for('views.dashboard'))
+    
