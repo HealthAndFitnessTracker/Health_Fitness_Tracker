@@ -18,6 +18,9 @@
         <div>
             <img class="dashboard-img2" src="{{ url_for('static', filename='images/dashboard_header.png') }}">
         </div>
+        <div>
+            <button class="home-button" onclick="window.location.href='/'">About</button>
+        </div>
     </div>
     <div class="signUp">
         <form method="POST">
@@ -37,7 +40,15 @@
                 </tr>
                 <tr>
                     <td></td>
+                    <td class="error">{{ error }}</td>
+                </tr>
+                <tr>
                     <td></td>
+                    <td>
+                        {% for error in form.email.errors %}
+				        <span class="error">{{ error }}</span>
+				        {% endfor %}
+                    </td>
                 </tr>
                 <tr>
                     <td></td>
