@@ -1,0 +1,71 @@
+.header{
+    width: 100%;
+    height: 206px;
+    background-color: rgba(4, 242, 28, 0.4666666666666667);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+.dashboard-img1{
+    position: absolute;
+    width: 25%;
+    bottom: 0;
+    left: 0;
+    transform: rotate(180deg);
+    transform-origin: center;
+}
+
+.dashboard-img2{
+    position: absolute;
+    width: 25%;
+    top: 0;
+    right: 0;
+}
+
+.guest{
+    width: 5%;
+    position: absolute;
+    right: 23%;
+    top: 45%;
+}
+
+.button-group{
+    display: block;
+    cursor: pointer;
+}
+
+.company-name{
+    text-align: center;
+    font-family:"Montserrat Bold", "Montserrat", sans-serif;
+    font-size: 72px;
+}
+
+.company-name1{
+    font-weight: 500;
+}
+
+.company-name2{
+    font-weight: 1000;
+}
+
+.about {
+    margin-top: 230px;
+}
+
+h1{
+    text-align: center;
+}
+
+.about-para{
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 20px;
+}
+
+.measurements{
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 20px;
+}
