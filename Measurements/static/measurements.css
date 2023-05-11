@@ -1,0 +1,64 @@
+.page-name{
+  width: 100%;
+  height: 350px;
+  background-color: rgba(4, 242, 28, 0.4666666666666667);
+  position: fixed;
+  top: 205px;
+  left: 0px;
+  z-index: auto;
+}
+
+.Weight{
+  position: fixed;
+  top: 300px;
+  left: 0px;
+  z-index: auto;
+}
+
+.Chest{
+  position: fixed;
+  top: 375px;
+  left: 0px;
+  z-index: auto;
+}
+
+.LeftArm{
+  position: fixed;
+  top: 450px;
+  left: 0px;
+  z-index: auto;
+}
+
+.RightArm{
+  position: fixed;
+  top: 525px;
+  left: 0px;
+  z-index: auto;
+}
+
+.Stomach{
+  position: fixed;
+  top: 300px;
+  left: 55%;
+  z-index: auto;
+}
+
+.LeftThigh{
+  position: fixed;
+  top: 375px;
+  left: 55%;
+  z-index: auto;
+}
+
+.RightThigh{
+  position: fixed;
+  top: 425px;
+  left: 55%;
+  z-index: auto;
+}
+
+.Submit-button{
+ position: fixed;
+ top: 500px;
+ left: 55%;
+}
