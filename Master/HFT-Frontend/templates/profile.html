@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>profile</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='profile.css') }}">
+</head>
+<body>
+    <script>
+        var Weightoutput = 0;
+    </script>
+    <div class="header">
+        <div class="company-name">
+            <p>
+                <span class="company-name1">HFT</span><span class="company-name2">Wellness</span>
+            </p>
+        </div>
+        <div>
+            <img class="dashboard-img1" src="{{ url_for('static', filename='images/dashboard_header.png') }}">
+        </div>
+        <div>
+            <img class="dashboard-img2" src="{{ url_for('static', filename='images/dashboard_header.png') }}">
+        </div>
+        <div>
+            <img class="guest" src="{{ url_for('static', filename='images/guest.png') }}">
+        </div>
+    </div>
+    <div class="about">
+        <h1>Your Profile</h1>
+        <p class="about-para">
+            Hello {{Name}}, this is your profile.
+        </p>
+        <p class="about-para">
+            These are your current goals:
+            <br> your first goal:
+            <br> your second goal:
+            <br> your third goal:
+            <br> you fourth goal:
+            <br> your fifth goal:
+        </p>
+
+        <div class="measurements">
+
+            <div class="Weight">
+                <form action=""></form>
+              <label for="Weight">Current Weight (lbs): {{Weightoutput}}</label>
+              <input type="text" id="Weight" name="Weight" onkeydown="search(this)"><br><br>
+            </div>
+
+            <div class="Chest">
+              <label for="Chest">Chest (inches):</label>
+              <input type="text" id="Chest" name="Chest"><br><br>
+            </div>
+
+            <div class="LeftArm">
+              <label for="LeftArm">Left Arm (inches):</label>
+              <input type="text" id="LeftArm" name="LeftArm"><br><br>
+            </div>
+
+            <div class="RightArm">
+              <label for="RightArm">Right Arm (inches):</label>
+              <input type="text" id="RightArm" name="RightArm"><br><br>
+            </div>
+
+            <div class="Stomach">
+              <label for="Stomach">Stomach (inches):</label>
+              <input type="text" id="Stomach" name="Stomach"><br><br>
+            </div>
+
+            <div class="LeftThigh">
+              <label for="LeftThigh">Left Thigh (inches):</label>
+              <input type="text" id="LeftThigh" name="LeftThigh"><br><br>
+            </div>
+
+            <div class="RightThigh">
+              <label for="RightThigh">Right Thigh (inches):</label>
+              <input type="text" id="RightThigh" name="RightThigh"><br><br>
+            </div>
+
+            <div class="Submit-button">
+              <button>Submit</button>
+            </div>
+
+          </div>
+</body>
+<script>
+  function search(ele) {
+    if(event.key === 'Enter') {
+      alert(ele.key);
+    }
+  }
+  var Weightoutput = 0;
+    Weightoutput += document.getElementById('Weight').value
+</script>
+
+</html>

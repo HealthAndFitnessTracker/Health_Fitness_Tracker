@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Measurements</title>
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='header.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='measurements.css')}}">
+
+</head>
+
+<body>
+
+    <div class="header">
+
+        <div class="company-name">
+            <p>
+                <span class="company-name1">HFT</span><span class="company-name2">Wellness</span>
+            </p>
+        </div>
+
+        <div>
+          <img class="dashboard-img1" src="{{ url_for('static', filename='images/dashboard_header.png')}}">
+        </div>
+
+        <div>
+            <img class="dashboard-img2" src="{{ url_for('static', filename='images/dashboard_header.png') }}">
+        </div>
+
+        <div>
+            <img class="guest" src="{{ url_for('static', filename='images/guest.png') }}">
+        </div>
+
+    </div>
+
+    <div class="measurements">
+
+      <div class="page-name">
+        <h1>Measurements</h1>
+      </div>
+
+      <div class="Weight">
+        <label for="Weight">Current Weight (lbs):</label>
+        <input type="text" id="Weight" name="Weight"><br><br>
+      </div>
+
+      <div class="Chest">
+        <label for="Chest">Chest (inches):</label>
+        <input type="text" id="Chest" name="Chest"><br><br>
+      </div>
+
+      <div class="LeftArm">
+        <label for="LeftArm">Left Arm (inches):</label>
+        <input type="text" id="LeftArm" name="LeftArm"><br><br>
+      </div>
+
+      <div class="RightArm">
+        <label for="RightArm">Right Arm (inches):</label>
+        <input type="text" id="RightArm" name="RightArm"><br><br>
+      </div>
+
+      <div class="Stomach">
+        <label for="Stomach">Stomach (inches):</label>
+        <input type="text" id="Stomach" name="Stomach"><br><br>
+      </div>
+
+      <div class="LeftThigh">
+        <label for="LeftThigh">Left Thigh (inches):</label>
+        <input type="text" id="LeftThigh" name="LeftThigh"><br><br>
+      </div>
+
+      <div class="RightThigh">
+        <label for="RightThigh">Right Thigh (inches):</label>
+        <input type="text" id="RightThigh" name="RightThigh"><br><br>
+      </div>
+
+      <div class="Submit-button">
+        <button>Submit</button>
+      </div>
+
+    </div>
+
+</body>
+</html>

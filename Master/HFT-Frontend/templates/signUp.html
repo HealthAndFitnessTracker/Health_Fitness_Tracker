@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign Up</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='header.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='signUp.css') }}">
+</head>
+<body>
+    <div class="header">
+        <div class="company-name">
+            <p>
+                <span class="company-name1">Nutri</span><span class="company-name2">Fit</span>
+            </p>
+        </div>
+        <div>
+            <img class="dashboard-img1" src="{{ url_for('static', filename='images/dashboard_header.png') }}">
+        </div>
+        <div>
+            <img class="dashboard-img2" src="{{ url_for('static', filename='images/dashboard_header.png') }}">
+        </div>
+        <div>
+            <button class="home-button" onclick="window.location.href='/'">About</button>
+        </div>
+    </div>
+    <div class="signUp">
+        <form method="POST">
+          {{ form.hidden_tag() }}
+            <table>
+                <tr class="form-group">
+                    <td>{{ form.name.label }}</td>
+                    <td>{{ form.name(class='form-control') }}</td>
+                  </tr>
+                <tr class="form-group">
+                    <td>{{ form.email.label }}</td>
+                    <td>{{ form.email(class='form-control') }}</td>
+                </tr>
+                <tr class="form-group">
+                    <td>{{ form.password.label }}</td>
+                    <td>{{ form.password(class='form-control') }}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="error">{{ error }}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        {% for error in form.email.errors %}
+				        <span class="error">{{ error }}</span>
+				        {% endfor %}
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>{{ form.submit(class="btn") }}</td>
+                </tr>
+            </table>
+          </form>
+    </div>
+</body>
+</html>
