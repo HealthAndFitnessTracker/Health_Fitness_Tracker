@@ -58,3 +58,18 @@ def myBoard():
     else:
         return redirect(url_for('views.dashboard'))
     
+@views.route('/calendar')
+def calendar():
+    return render_template('calendar.html')    
+
+@views.route('/goals')
+def goals():
+    return render_template('goals.html') 
+
+@views.route('/foodlog')
+def foodLog():
+    return render_template('foodLog.html') 
+
+@views.route('/activitylog')
+def activityLog():
+    return render_template('activityLog.html') 

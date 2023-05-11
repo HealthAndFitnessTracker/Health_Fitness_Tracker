@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calendar</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='header.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='calendar.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.2/dist/echarts.min.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="company-name">
+            <p>
+                <span class="company-name1">HFT</span><span class="company-name2">Wellness</span>
+            </p>
+        </div>
+        <div>
+            <img class="dashboard-img1" src="{{ url_for('static', filename='images/dashboard_header.png') }}">
+        </div>
+        <div>
+            <img class="dashboard-img2" src="{{ url_for('static', filename='images/dashboard_header.png') }}">
+        </div>
+        <div>
+            <img class="guest" src="{{ url_for('static', filename='images/guest.png') }}">
+        </div>
+        <div class="signIn-button">
+            <button onclick="window.location.href='/signIn'">Sign In</button>
+        </div>
+    </div>
+
+    <div class="datetime"></div>
+
+    <div class="calendar-table">
+        <table>
+            <tr class="header-row">
+                <td><strong>Monday</strong></td>
+                <td><strong>Tuesday</strong></td>
+                <td><strong>Wednesday</strong></td>
+                <td><strong>Thursday</strong></td>
+                <td><strong>Friday</strong></td>
+                <td><strong>Saturday</strong></td>
+                <td><strong>Sunday</strong></td>
+            </tr>
+            <tr class="middle-row">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><a href="/foodlog">Track</a></td>
+                <td><a href="/foodlog">Track</a></td>
+                <td><a href="/foodlog">Track</a></td>
+                <td><a href="/foodlog">Track</a></td>
+                <td><a href="/foodlog">Track</a></td>
+                <td><a href="/foodlog">Track</a></td>
+                <td><a href="/foodlog">Track</a></td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="myChart" style="width: 50%; height: 400px;text-align: right;"></div>
+    
+    <script>
+        var today = new Date();
+        var currentDay = today.getDay();
+        var diff = currentDay === 0 ? -6 : 1 - currentDay; // adjust when day is Sunday
+        var monday = new Date(today);
+        monday.setDate(today.getDate() + diff);
+        var sunday = new Date(monday);
+        sunday.setDate(monday.getDate() + 6);
+
+        var options = { month: 'long', day: 'numeric' };
+        var mondayDate = monday.toLocaleDateString('en-US', options);
+        var sundayDate = sunday.toLocaleDateString('en-US', options);
+        var month = new Intl.DateTimeFormat('en-US', { month: 'long' }).format(monday);
+
+        document.querySelector('.datetime').textContent = month + ': ' + mondayDate.slice(month.length + 1) + ' - ' + sundayDate.slice(month.length + 1);
+    </script>
+
+    <script>
+        var myChart = echarts.init(document.getElementById('myChart'));
+
+        var options = {
+        xAxis: {
+            type: 'category',
+            data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            name: 'Day'
+        },
+        yAxis: {
+            type: 'value',
+            name: 'Calories'
+        },
+        series: [{
+            data: [1500, 2300, 2240, 2018, 1350, 1470, 2060],
+            type: 'line',
+        }]
+        };
+
+        // Set the chart options and render it
+        myChart.setOption(options);
+  </script>
+
+
+      
+</body>
+</html>

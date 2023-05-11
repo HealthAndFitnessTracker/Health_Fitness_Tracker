@@ -1,0 +1,54 @@
+button {
+    position: absolute;
+    right: 10%;
+    top: 48%;
+    width: 12%;
+    height: 20%;
+    background-color: rgba(255, 255, 255, 0.634);
+    color: #000000;
+    border: solid 1px rgb(133, 126, 126);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.datetime {
+    font-size: 45px;
+    padding: 10px;
+    color: black;
+    margin-top: 200px;
+    text-align: center;
+}
+
+.calendar-table table {
+    border-collapse: collapse;
+    width: 95vw;
+    margin: 0 auto;
+    margin-top: 10px;
+    table-layout: fixed;
+}
+
+.calendar-table th,
+.calendar-table td {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.calendar-table tr.header-row {
+    background-color: rgb(99,161,3);
+    color: #000000;
+    font-weight: bold;
+}
+
+.calendar-table tr.middle-row {
+    background-color: rgb(202,249,130);
+    height: 100px;
+}
+
+a {
+    color: black; /* Set the link color to black */
+    text-decoration: none; /* Remove the underline */
+  }
+
+  a:hover {
+    color: rgb(0, 255, 85); /* Change the link color to red on hover */
+  }
