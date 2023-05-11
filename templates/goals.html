@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Example</title>
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='header.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='goals.css')}}">
+
+</head>
+<body>
+
+    <div class="header">
+        <div class="company-name">
+            <p>
+                <span class="company-name1">HFT</span><span class="company-name2">Wellness</span>
+            </p>
+        </div>
+        <div>
+          <img class="dashboard-img1" src="{{ url_for('static', filename='images/dashboard_header.png')}}"
+        </div>
+        <div>
+            <img class="dashboard-img2" src="{{ url_for('static', filename='images/dashboard_header.png') }}">
+        </div>
+        <div>
+            <img class="guest" src="{{ url_for('static', filename='images/guest.png') }}">
+        </div>
+        <div class="signIn-button">
+            <button onclick="window.location.href='/signIn'">Sign In</button>
+        </div>
+    </div>
+
+    <div class="goals">
+      <div class="page-name">
+        <h1>Exercise and Calorie Goals</h1>
+      </div>
+      <div>
+        <img class="goals-img1" src="{{ url_for('static', filename='images/food.jpg') }}">
+      </div>
+      <div class="exercise">
+        <label for="exercise">Exercise goal: minutes per day</label>
+        <input type="text" id="exercise" name="exercise"><br><br>
+      </div>
+      <div class="calories">
+        <label for="calories">Calorie goal: calories per day</label>
+        <input type="text" id="calories" name="calories"><br><br>
+      </div>
+      <div class="Submit-button">
+        <button>Submit</button>
+      </div>
+    </div>
+
+</body>
+</html>

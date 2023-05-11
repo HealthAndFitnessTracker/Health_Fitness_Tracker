@@ -40,7 +40,7 @@ def signUp():
         email = request.form.get('email')
         name = request.form.get('name')
         password = request.form.get('password')
-        measurements = Measurements(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        measurements = Measurements(1,1,1,1,0,0,0,0,0,0,0,0,0,0,0)
         # goals = Goals(0,0,0,0,0)
 
         data = request.form
@@ -62,7 +62,12 @@ def signUp():
 def profile():
     global email
     user = User.query.filter_by(email=email).first()
+    
+    def setmeasurements():
+        Measurements.AddMeasurement(self=user.measurements, )
+
     return render_template('profile.html', Name=user.name, Email=user.email, Password=user.password, Measurements=user.measurements)
+
 
 @views.route('/directory', methods=['GET'])
 def directory():
@@ -71,3 +76,15 @@ def directory():
 @views.route('/calendar') 
 def calendar(): 
     return render_template('calendar.html') 
+
+@views.route('/foodLog') 
+def foodlog(): 
+    return render_template('foodLog.html') 
+
+@views.route('/activityLog') 
+def activitylog(): 
+    return render_template('activityLog.html') 
+
+@views.route('/goals', methods=['GET', 'POST'])
+def goals():
+    return render_template("goals.html")
